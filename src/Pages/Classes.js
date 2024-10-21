@@ -4,4 +4,4 @@ export const Classes = () => {
         <h1>Classes</h1>
         </div>
     );
-    }
+    };

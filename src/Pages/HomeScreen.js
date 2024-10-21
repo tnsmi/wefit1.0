@@ -4,4 +4,4 @@ export const HomeScreen = () => {
         <h1>Home Screen</h1>
         </div>
     );
-    }
+    };
