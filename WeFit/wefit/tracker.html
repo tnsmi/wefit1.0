@@ -113,30 +113,29 @@
 
 <!-- tracker -->
 
-    <div class="container">
-        <br><br>
-        <h1 style="color: white; font-weight: bold;">Calorie Tracker</h1>
-        <form id="mealForm">
-            <label for="mealName" style="color: white; font-weight: bold;">Meal Name:</label><br>
+<div class="container">
+    <h1 style="color: white; font-weight: bold;">Calorie Tracker</h1>
+
+    <div class="tracker-content">
+        <form id="mealForm" class="form-section">
+            <label for="mealName" style="color: white;">Meal Name:</label><br>
             <input type="text" id="mealName" required><br><br>
 
-            <label for="ingredients" style="color: white; font-weight: bold;">Ingredients (comma-separated):</label><br>
+            <label for="ingredients" style="color: white;">Ingredients (comma-separated):</label><br>
             <input type="text" id="ingredients" required><br><br>
 
-            <label for="calories" style="color: white; font-weight: bold;">Total Calories:</label><br>
+            <label for="calories" style="color: white;">Total Calories:</label><br>
             <input type="number" id="calories" required><br><br>
 
             <button type="button" onclick="addMeal()">Submit Meal</button>
         </form>
-        <br><br>
 
         <div class="meal-list" id="mealList">
             <h2 style="color: white; font-weight: bold;">Meal Entries:</h2>
         </div>
     </div>
-
-    <script src="tracker.js"></script>
-
+</div>
+<script src="tracker.js"></script>
 
 <!-- end tracker -->
 

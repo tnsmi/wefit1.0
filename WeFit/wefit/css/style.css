@@ -918,5 +918,32 @@ a:focus {
   color: #ffffff;
 }
 
+/* Flex container for form and meal list */
+.tracker-content {
+  display: flex;
+  gap: 20px; /* Adds space between form and meal list */
+  align-items: flex-start; /* Aligns both sections to the top */
+}
+
+/* Form section styling */
+.form-section {
+  flex: 1; /* Takes up one part of the space */
+  max-width: 300px; /* Sets a maximum width for the form */
+}
+
+/* Meal list styling */
+.meal-list {
+  flex: 1; /* Takes up one part of the space */
+  max-width: 300px; /* Sets a maximum width for the meal list */
+  margin-left: 50px; /* Adds more space to the left of this section */
+}
+
+/* Meal item styling */
+.meal-item {
+  margin-bottom: 15px; /* Adds space below each meal entry */
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
