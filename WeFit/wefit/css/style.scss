@@ -118,7 +118,6 @@ body {
             background-color: #f8f8f8;
         }
     }
-
 }
 
 
@@ -262,6 +261,14 @@ a:focus {
     background-image: url(../images/slider-bg.jpg);
     background-size: cover;
 
+    #example{
+        position:absolute;
+        top: 10px;
+        left: 10px;
+        padding: 5px;
+        background-color: white;
+    }
+
     .slider_container {
         height: calc(100% - 60px);
         display: flex;
@@ -365,8 +372,6 @@ a:focus {
 // about section
 .about_section {
     background-color: #f8f8f8;
-
-
     .box {
         @include flexColumnCenter();
         text-align: center;
@@ -387,9 +392,6 @@ a:focus {
                 margin-top: 15px;
             }
         }
-
-
-
     }
 }
 
