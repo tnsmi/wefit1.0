@@ -30,6 +30,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/verifyregister.js"></script>
 </head>
 
 <body>
@@ -66,8 +67,8 @@
     </header>
     <!-- end header section -->
     <!-- slider section -->
-    <section class=" slider_section position-relative">
-      <div class="container">
+    <section class="slider_section position-relative">
+      <div class="container full">
         <div class="custom_nav2">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -102,21 +103,76 @@
             </nav>
           </div>
         </div>
-        <!--BEGIN CONTENT-->
-        <div class = "container table wide">
-          <form method="POST" name="LoginForm" action="profile.html">
+        <div class = "container table">
+          <form method="POST" name="RegisterForm" action="profile.html">
             <table class="table light wide" cellspacing=0 cellpadding = 0>
               <tr>
                 <th class="blue" colspan= 2>
-                  Login/Register
+                  Register
                 </th>
               </tr>
               <tr>
                 <td>
-                  <label>Email or UserID:</label>
+                  <label>First Name:</label>
                 </td>
                 <td>
-                  <input type ="text" name="email" placeholder="Enter Email"/>
+                  <input type ="text" id="UserFirstName" name="UserFirstName" placeholder="Enter First Name"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="FirstNameSpan"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Last Name:</label>
+                </td>
+                <td>
+                  <input type ="text" id="UserLastName" name="UserLastName" placeholder="Enter Last Name"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="LastNameSpan"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Age:</label>
+                </td>
+                <td>
+                  <input type ="number" id="UserAge" name="UserAge" placeholder="Enter Age"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="AgeSpan"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Gender:</label>
+                </td>
+                  <td> 
+                    <select id="UserGender" name='UserGender' style="width:210px">
+                    <option value="" hidden></option> 
+                    <option value='M'>Male
+                    <option value='F'>Female
+                    </select> </td>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="GenderSpan"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Email Address:</label>
+                </td>
+                <td>
+                  <input type ="text" id="UserEmail" name="UserEmail" placeholder="Enter Email Address"/>
                 </td>
               </tr>
               <tr>
@@ -126,30 +182,60 @@
               </tr>
               <tr>
                 <td>
-                  <label>Password:</label>
-                </td>  
+                  <label>Phone Number:</label>
+                </td>
                 <td>
-                  <input type="password" name="password" placeholder="Password"/>
+                  <input type ="tel" id="UserPhoneNumber" name="UserPhoneNumber" placeholder="###-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="PhoneSpan"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Create Password:</label>
+                </td>
+                <td>
+                  <input type="password" id="UserPassword" name="UserPassword" placeholder="Enter Password"/>
+                  <br>
+                  <input type="checkbox" onclick ='showPass("UserPassword")'> Show Password
                 </td>
               </tr>
               <tr>
                 <td colspan=2 style="margin: auto;">
                   <span id="PasswordSpan"></span>
-                  <br> OR
-                  <a href="register.php" style="color: purple;text-decoration: none;">Sign Up</a>
+                </td>
+              </tr><tr>
+                <td>
+                  <label>Confirm Password:</label>
+                </td>
+                <td>
+                  <input type="password" id="UserConfirmedPassword" placeholder="Confirm Password"/> 
+                  <br>
+                  <input type="checkbox" onclick='showPass("UserConfirmedPassword")'> Show Password
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2 style="margin: auto;">
+                  <span id="ConfirmPasswordSpan"></span>
                 </td>
               </tr>
               <tr>
                 <td colspan = 2 style = "margin: auto;">
-                  <input type="button" value="Login" name="login_button" onclick='validateLogin()' style="border-radius: 5px;"/> 
+                  <input type="button" value="Sign Up" name="login_button" onclick="verifyRegister()" style="border-radius: 5px;"/> 
                 </td>
+              </tr>
+              <tr>
+                <td colspan="2"><a href="index.html" style="color:purple; text-decoration: underline;">Cancel</a></td>
               </tr>
             </table>
           </form>
         </div>
-      <!--END CONTENT-->
       </section>
-      <!-- BEGIN FOOTER -->
+      
+      <!--Begin Footer -->
   <section class="info_section layout_padding2-top">
     <div class="container">
       <div class="row">
@@ -193,7 +279,7 @@
           </h6>
           <ul>
             <li>
-              <a href="">
+              <a href="#">
                 Sign Up
               </a>
             </li>
@@ -244,16 +330,16 @@
       </div>
     </div>
   </section>
-  <!-- END footer section -->
+  <!-- footer section -->
   <section class="container-fluid footer_section ">
     <p>
         2024 WeFit®. All Rights Reserved
     </p>
 </section>
-<!--END ALL-->
+<!-- footer section -->
+
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-
 <script>
   function openNav() {
     document.getElementById("myNav").classList.toggle("menu_width");
@@ -262,34 +348,29 @@
       .classList.toggle("menu_btn-style");
   }
 
-  function validateLogin(){
-    var email = document.LoginForm.email.value;
-    var password = document.LoginForm.password.value;
-    if(email.length == 0 || password.length == 0) {
-      if(email.length == 0) {
-        EmailSpan.innerHTML="<tr><td><font color='red'>Field is Required</font><tr><td>";
-      }
-      else{
-        EmailSpan.innerHTML="";
-      }
-      if(password.length == 0) {
-        PasswordSpan.innerHTML="<font color='red'>Field is Required</font>";
-      }
-      else{
-        PasswordSpan.innerHTML="";
-      }
-    }
-    if (email.length > 50 || password.length > 50) {
-      if(email.length > 50) {
-        EmailSpan.innerHTML="<font color='red'>Characters should be less than 50 </font>";
-      }
-      if(password.length > 50) {
-        PasswordSpan.innerHTML="<font color='red'>Characters should be less than 50 </font>";
-      }
-    }
-    else{
-      document.LoginForm.submit()
+  //Function that allows for individual password display
+  function showPass(box){
+    var x = document.getElementById(box);
+    if(x.type === "password"){
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
   }
-</script>
+  </script>
+  <?php 
+  $FirstName=$LastName=$Email=$Age=$Gender=$Password="";
+  if($_SERVER["REQUEST_METHOD"]=="POST"){
+    function sec($data){
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+    $FirstName = sec($_POST["UserFirstName"]);
+  }
+  
+  include sqlconnect.php
+   
+  ?>
 </body>

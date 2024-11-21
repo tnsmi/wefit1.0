@@ -553,6 +553,10 @@ pre code {
   margin-left: auto;
 }
 
+.container.full{
+  position: relative;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -1523,6 +1527,13 @@ pre code {
   max-width: 50%;
 }
 
+.container.table.wide{
+  max-width: 90%;
+  width: 75%;
+  height: calc(100%-80px);
+  margin-top: 50%;
+}
+
 .table.light{
   width: 100%;
   margin-top: 35%;
@@ -1530,7 +1541,6 @@ pre code {
   background-color: white;
   border-radius: 10px;
   padding:none;
-  border-spacing: 0;
   max-width: 45%;
   top:50%;
   left:50%;
@@ -1538,11 +1548,20 @@ pre code {
   transform:translate(-50%,-50%)
 }
 
+.table.light.wide{
+  max-width: 70%;
+  position: absolute;
+  margin-top: 40%;
+}
+
 .table.light th, .table.light td{
   padding: none;
   vertical-align: center;
-  height: calc(100%-20px);
-  border: none;
+  height: calc(100%-50px);
+  border:none;
+  border-spacing: 0px;
+  padding: 0.25rem;
+  
 }
 
 .table.light.th{
@@ -1551,7 +1570,6 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
