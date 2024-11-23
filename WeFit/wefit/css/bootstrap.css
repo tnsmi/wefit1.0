@@ -589,6 +589,20 @@ pre code {
   margin-left: auto;
 }
 
+.container-fluid.center{
+  padding-left: 0%;
+  padding-right: 0%;
+  width:80%;
+  height:auto;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  margin:auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding:10px;
+}
+
 .row {
   display: -ms-flexbox;
   display: flex;
