@@ -9,6 +9,7 @@ Advanced AI technology to personalize your fitness and nutrition plans.
 A user-friendly nutrition tracker to keep your meals aligned with your goals.
 Access to experienced trainers and supportive tools to guide you every step of the way.
 At WeFit, our mission is simple: to make fitness easier, accessible, and rewarding for everyone. Join us today, and let’s make your fitness dreams a reality!
+
 **To run this application, you want to:**
 1. Download all files to your system.
 2. Im your systems files, navigate to the WeFit files.
